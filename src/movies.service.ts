@@ -42,5 +42,5 @@ export const updateMovieService = async (movie: Movie, body: TMovieUpdate) => {
 };
 
 export const deleteMovieService = async (movie: Movie): Promise<void> => {
-  await movieRepo.delete(movie.id);
+  await movieRepo.remove(movie);
 };

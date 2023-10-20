@@ -9,7 +9,9 @@ export const isMovieNameUnique = async (
 ): Promise<void> => {
   const nameQuery = await movieRepo.findOneBy({ name: req.body.name });
 
-  if (nameQuery?.name === req.body.name) {
+  if (!req.body.name) return next();
+
+  if (nameQuery) {
     throw new AppError("Movie already exists.", 409);
   }
 

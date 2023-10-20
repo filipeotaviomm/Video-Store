@@ -36,7 +36,7 @@ export const pagination = (
     sort = querySort;
   }
 
-  if (!querySort || !(queryOrder && orderOpts.includes(queryOrder))) {
+  if (!(queryOrder && orderOpts.includes(queryOrder))) {
     order = "asc";
   } else {
     order = queryOrder;
