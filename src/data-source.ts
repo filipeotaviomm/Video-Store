@@ -10,6 +10,8 @@ const dataSourceConfig = (): DataSourceOptions => {
     "./migrations/**.{js,ts}"
   );
 
+  const dbUrl: string | undefined = process.env.DATABASE_URL;
+
   if (process.env.NODE_ENV === "test") {
     return {
       type: "sqlite",
@@ -18,8 +20,6 @@ const dataSourceConfig = (): DataSourceOptions => {
       entities: [entitiesPath],
     };
   }
-
-  const dbUrl: string | undefined = process.env.DATABASE_URL;
 
   if (!dbUrl) {
     throw new Error("Missing var: DATABASE_URL");

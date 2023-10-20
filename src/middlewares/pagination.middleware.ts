@@ -30,13 +30,13 @@ export const pagination = (
   let sort: string;
   let order: string;
 
-  if (!(querySort || sortOpts.includes(querySort))) {
+  if (!(querySort && sortOpts.includes(querySort))) {
     sort = "id";
   } else {
     sort = querySort;
   }
 
-  if (!(queryOrder || orderOpts.includes(queryOrder))) {
+  if (!querySort || !(queryOrder && orderOpts.includes(queryOrder))) {
     order = "asc";
   } else {
     order = queryOrder;

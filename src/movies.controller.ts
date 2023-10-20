@@ -23,7 +23,7 @@ export const getAllMoviesController = async (
 ): Promise<Response> => {
   const movies: TAllMovies = await getAllMoviesService(res.locals.pagination);
 
-  return res.status(201).json(movies);
+  return res.status(200).json(movies);
 };
 
 export const updateMovieController = async (

@@ -1,7 +1,7 @@
 import { Entity, PrimaryGeneratedColumn, Column } from "typeorm";
 
 @Entity("movies")
-export default class Movie {
+class Movie {
   @PrimaryGeneratedColumn("increment")
   id: number;
 
@@ -9,7 +9,7 @@ export default class Movie {
   name: string;
 
   @Column({ type: "text", nullable: true })
-  description: string;
+  description?: string | undefined | null;
 
   @Column({ type: "integer" })
   duration: number;
@@ -17,3 +17,5 @@ export default class Movie {
   @Column({ type: "integer" })
   price: number;
 }
+
+export default Movie;
