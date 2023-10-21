@@ -18,7 +18,5 @@ export const isMovieIdValid = async (
 
   res.locals.foundMovie = foundMovie;
 
-  console.log(res.locals.foundMovie);
-
   return next();
 };

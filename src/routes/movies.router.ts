@@ -4,12 +4,15 @@ import {
   deleteMovieController,
   getAllMoviesController,
   updateMovieController,
-} from "./movies.controller";
-import { isMovieIdValid } from "./middlewares/isMovieIdValid.middleware";
-import { validateBody } from "./middlewares/validateBody.middleware";
-import { moviesCreateSchema, moviesUpdateSchema } from "./movies.schema";
-import { pagination } from "./middlewares/pagination.middleware";
-import { isMovieNameUnique } from "./middlewares/isMovieNameUnique.middleware";
+} from "../controllers/movies.controller";
+import { isMovieIdValid } from "../middlewares/isMovieIdValid.middleware";
+import { validateBody } from "../middlewares/validateBody.middleware";
+import {
+  moviesCreateSchema,
+  moviesUpdateSchema,
+} from "../schemas/movies.schema";
+import { pagination } from "../middlewares/pagination.middleware";
+import { isMovieNameUnique } from "../middlewares/isMovieNameUnique.middleware";
 
 export const moviesRouter = Router();
 

@@ -1,10 +1,10 @@
-import { Movie } from "./entities";
-import { TMovieCreate, TMovieUpdate } from "./interfaces/movies.interface";
+import { Movie } from "../entities";
+import { TMovieCreate, TMovieUpdate } from "../interfaces/movies.interface";
 import {
   TAllMovies,
   TPaginationParams,
-} from "./interfaces/pagination.interface";
-import { movieRepo } from "./repositories";
+} from "../interfaces/pagination.interface";
+import { movieRepo } from "../repositories";
 
 export const createMovieService = async (
   body: TMovieCreate
@@ -25,8 +25,8 @@ export const getAllMoviesService = async ({
 }: TPaginationParams): Promise<TAllMovies> => {
   const [movies, count] = await movieRepo.findAndCount({
     order: { [sort]: order },
-    skip: page,
-    take: perPage,
+    skip: page, //offset
+    take: perPage, //limit
   });
 
   return {

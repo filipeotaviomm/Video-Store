@@ -1,12 +1,12 @@
 import { Request, Response } from "express";
-import { Movie } from "./entities";
+import { Movie } from "../entities";
 import {
   createMovieService,
   deleteMovieService,
   getAllMoviesService,
   updateMovieService,
-} from "./movies.service";
-import { TAllMovies } from "./interfaces/pagination.interface";
+} from "../services/movies.service";
+import { TAllMovies } from "../interfaces/pagination.interface";
 
 export const createMovieController = async (
   req: Request,

@@ -1,5 +1,5 @@
 import { z } from "zod";
-import { moviesCreateSchema } from "../movies.schema";
+import { moviesCreateSchema } from "../schemas/movies.schema";
 import { DeepPartial } from "typeorm";
 import { Movie } from "../entities";
 
