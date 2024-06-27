@@ -36,7 +36,9 @@ export const pagination = (
     sort = querySort;
   }
 
-  if (!querySort || !(queryOrder && orderOpts.includes(queryOrder))) {
+  //só passa no teste "withoutSort.route.spec essa linha debaixo, mas tem uma brecha, Se não tem o “sort”, não tem como colocar o “order” como “desc”
+  // if (!querySort || !(queryOrder && orderOpts.includes(queryOrder))) {
+  if (!(queryOrder && orderOpts.includes(queryOrder))) {
     order = "asc";
   } else {
     order = queryOrder;
